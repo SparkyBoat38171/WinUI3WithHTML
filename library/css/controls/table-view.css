@@ -1,0 +1,45 @@
+/* WinUI 3 — TableView */
+.win-table-view {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+.win-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.win-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--win-layer-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--win-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid var(--win-divider-stroke);
+  white-space: nowrap;
+}
+.win-table th.is-sortable { cursor: default; }
+.win-table th.is-sortable:hover { color: var(--win-text-primary); background: var(--win-subtle-hover); }
+.win-table td {
+  height: 40px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--win-divider-stroke);
+  color: var(--win-text-primary);
+  vertical-align: middle;
+}
+.win-table tbody tr:hover td { background: var(--win-subtle-hover); }
+.win-table tbody tr.is-selected td { background: var(--win-accent-selected); }
+.win-table tbody tr:last-child td { border-bottom: 0; }
+.win-table__sort { margin-left: 4px; font-family: var(--win-font-icon); font-size: 9px; color: var(--win-text-tertiary); }
+.win-table__cell--numeric { text-align: right; font-variant-numeric: tabular-nums; }
+.win-table__checkbox { width: 32px; }

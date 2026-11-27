@@ -1,0 +1,167 @@
+/* ==========================================================================
+   WinUI 3 for the Web — motion
+   Fluent connected / entrance / implicit motion
+   ========================================================================== */
+
+@keyframes win-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes win-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes win-slide-up-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes win-slide-down-in {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes win-slide-left-in {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes win-slide-right-in {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes win-scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes win-pop-in {
+  0% { opacity: 0; transform: scale(0.86); }
+  65% { opacity: 1; transform: scale(1.015); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes win-content-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes win-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@keyframes win-progress-indeterminate {
+  0% { transform: translateX(-120%) scaleX(0.6); }
+  45% { transform: translateX(35%) scaleX(1.2); }
+  100% { transform: translateX(240%) scaleX(0.6); }
+}
+
+@keyframes win-ring-rotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes win-ring-dash {
+  0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 90, 200; stroke-dashoffset: -35px; }
+  100% { stroke-dasharray: 90, 200; stroke-dashoffset: -125px; }
+}
+
+.win-animate-in {
+  animation: win-content-enter var(--win-duration-enter) var(--win-ease-decelerate) both;
+}
+
+.win-animate-fade {
+  animation: win-fade-in var(--win-duration-normal) var(--win-ease-standard) both;
+}
+
+.win-animate-pop {
+  animation: win-pop-in var(--win-duration-slow) var(--win-ease-decelerate) both;
+}
+
+.win-stagger > * {
+  animation: win-slide-up-in var(--win-duration-enter) var(--win-ease-decelerate) both;
+}
+
+.win-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.win-stagger > *:nth-child(2) { animation-delay: 40ms; }
+.win-stagger > *:nth-child(3) { animation-delay: 80ms; }
+.win-stagger > *:nth-child(4) { animation-delay: 120ms; }
+.win-stagger > *:nth-child(5) { animation-delay: 160ms; }
+.win-stagger > *:nth-child(6) { animation-delay: 200ms; }
+.win-stagger > *:nth-child(7) { animation-delay: 240ms; }
+.win-stagger > *:nth-child(8) { animation-delay: 280ms; }
+.win-stagger > *:nth-child(n + 9) { animation-delay: 320ms; }
+
+.win-transition-transform {
+  transition: transform var(--win-duration-normal) var(--win-ease-decelerate);
+}
+
+.win-transition-opacity {
+  transition: opacity var(--win-duration-normal) var(--win-ease-standard);
+}
+
+.win-hover-lift {
+  transition:
+    transform var(--win-duration-normal) var(--win-ease-decelerate),
+    box-shadow var(--win-duration-normal) var(--win-ease-standard);
+}
+
+.win-hover-lift:hover {
+  transform: translateY(-2px) scale(1.005);
+  box-shadow: var(--win-shadow-flyout);
+}
+
+.win-page-enter {
+  animation: win-content-enter var(--win-duration-page) var(--win-ease-decelerate) both;
+}
+
+.win-page-enter--back {
+  animation: win-slide-left-in var(--win-duration-page) var(--win-ease-decelerate) both;
+}
+
+.win-connected-thumbnail {
+  transition:
+    border-radius 300ms var(--win-ease-point-to-point),
+    transform 300ms var(--win-ease-point-to-point),
+    opacity 200ms linear;
+}
+
+.win-implicit-width {
+  transition: width 250ms var(--win-ease-point-to-point);
+}
+
+.win-implicit-offset {
+  transition: transform 250ms var(--win-ease-point-to-point);
+}
+
+.win-easing-demo-track {
+  position: relative;
+  height: 4px;
+  margin: 20px 0;
+  border-radius: 2px;
+  background: var(--win-control-stroke-secondary);
+}
+
+.win-easing-demo-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: var(--win-accent);
+}
+
+.win-easing-demo.is-running .win-easing-demo-dot {
+  animation: win-easing-dot 2s forwards;
+}
+
+@keyframes win-easing-dot {
+  from { left: 0; }
+  to { left: calc(100% - 16px); }
+}

@@ -1,0 +1,83 @@
+/* WinUI 3 — RichEditBox */
+.win-rich-edit-box {
+  position: relative;
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  overflow: hidden;
+}
+.win-rich-edit-box:focus-within { background: var(--win-control-bg-quarternary); }
+
+.win-rich-edit-box::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--win-accent);
+  box-shadow: 0 1px 7px rgba(var(--win-accent-rgb), 0.55);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition:
+    width 260ms var(--win-ease-decelerate),
+    opacity 120ms linear;
+  pointer-events: none;
+}
+
+.win-rich-edit-box:focus-within::after {
+  width: 100%;
+  opacity: 1;
+}
+.win-rich-edit-box__toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 4px;
+  border-bottom: 1px solid var(--win-divider-stroke);
+  background: var(--win-card-bg-secondary);
+}
+.win-rich-edit-box__tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 13px;
+  cursor: default;
+}
+.win-rich-edit-box__tool:hover { background: var(--win-subtle-hover); }
+.win-rich-edit-box__tool.is-active { background: var(--win-subtle-pressed); }
+.win-rich-edit-box__tool--bold { font-weight: 700; }
+.win-rich-edit-box__tool--italic { font-style: italic; }
+.win-rich-edit-box__tool--underline { text-decoration: underline; }
+.win-rich-edit-box__content {
+  min-height: 140px;
+  max-height: 320px;
+  overflow: auto;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 22px;
+  outline: 0;
+}
+.win-rich-edit-box__content:empty::before {
+  content: attr(data-placeholder);
+  color: var(--win-text-tertiary);
+  pointer-events: none;
+}
+.win-rich-edit-box__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 10px;
+  border-top: 1px solid var(--win-divider-stroke);
+  color: var(--win-text-tertiary);
+  font-size: 11px;
+}

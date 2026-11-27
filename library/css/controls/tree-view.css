@@ -1,0 +1,67 @@
+/* WinUI 3 — TreeView */
+.win-tree-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  min-width: 0;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.win-tree-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding: 2px 8px 2px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+  user-select: none;
+}
+.win-tree-item:hover { background: var(--win-subtle-hover); }
+.win-tree-item.is-selected {
+  background: var(--win-subtle-selected);
+  border-color: var(--win-card-stroke);
+}
+.win-tree-item.is-selected::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--win-accent);
+  transform: translateY(-50%);
+}
+
+.win-tree-item__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 28px;
+  flex: none;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 9px;
+  transition: transform 167ms var(--win-ease-decelerate);
+  transform: rotate(0deg);
+}
+.win-tree-item[aria-expanded="true"] > .win-tree-item__chevron { transform: rotate(90deg); }
+.win-tree-item__chevron[aria-hidden="true"] { visibility: hidden; }
+.win-tree-item__icon { color: var(--win-text-secondary); font-family: var(--win-font-icon); font-size: 16px; margin-inline: 2px 6px; }
+.win-tree-item__label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.win-tree-children { display: none; }
+.win-tree-children.is-open { display: block; animation: win-fade-in 120ms var(--win-ease-standard); }
+.win-tree-view--checkbox .win-tree-item { padding-left: 4px; }

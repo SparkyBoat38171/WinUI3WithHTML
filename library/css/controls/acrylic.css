@@ -1,0 +1,26 @@
+/* WinUI 3 — AcrylicBrush */
+.win-acrylic-material {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  padding: 24px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background:
+    linear-gradient(var(--win-acrylic-tint, rgba(255, 255, 255, 0.62)), var(--win-acrylic-tint, rgba(255, 255, 255, 0.62))),
+    url("../../assets/acrylic-wallpaper.svg") center / cover;
+  -webkit-backdrop-filter: blur(30px) saturate(160%);
+  backdrop-filter: blur(30px) saturate(160%);
+}
+[data-theme="dark"] .win-acrylic-material {
+  --win-acrylic-tint: rgba(32, 32, 32, 0.62);
+}
+.win-acrylic-material__card {
+  position: relative;
+  width: min(300px, 100%);
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--win-card-bg);
+  border: 1px solid var(--win-card-stroke);
+  box-shadow: var(--win-shadow-card);
+}

@@ -1,0 +1,35 @@
+/* WinUI 3 — ItemsView */
+.win-items-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+.win-items-view--list { grid-template-columns: 1fr; }
+.win-items-view__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--win-card-bg);
+  cursor: default;
+}
+.win-items-view__item:hover { border-color: var(--win-control-stroke-secondary); }
+.win-items-view__item.is-selected { border-color: var(--win-accent); background: var(--win-accent-selected); }
+.win-items-view__visual {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: var(--win-accent-selected);
+  color: var(--win-accent-text);
+  font-family: var(--win-font-icon);
+  font-size: 24px;
+}
+.win-items-view__label { font-size: 12px; font-weight: 600; }

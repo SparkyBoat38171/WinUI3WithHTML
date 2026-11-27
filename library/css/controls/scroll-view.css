@@ -1,0 +1,37 @@
+/* WinUI 3 — ScrollView / ScrollViewer */
+.win-scroll-view {
+  position: relative;
+  height: 260px;
+  overflow: auto;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  scrollbar-gutter: stable;
+}
+.win-scroll-view__content { padding: 24px; min-width: 720px; }
+.win-scroll-view--horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.win-scroll-view--horizontal .win-scroll-view__content {
+  display: flex;
+  gap: 12px;
+  min-width: max-content;
+}
+.win-scroll-view__card {
+  width: 180px;
+  height: 120px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 8px;
+  background: var(--win-card-bg);
+  font-size: 14px;
+}
+.win-scroll-view__zoom {
+  transform-origin: top left;
+  transition: transform 167ms var(--win-ease-decelerate);
+}
+.win-scroll-indicator { color: var(--win-text-secondary); font-size: 12px; }

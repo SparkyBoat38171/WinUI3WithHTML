@@ -1,0 +1,136 @@
+/* WinUI 3 — ColorPicker */
+.win-color-picker {
+  --picker-hue: 210;
+  --picker-color: #005fb8;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 220px;
+  gap: 16px;
+  width: 100%;
+  max-width: 540px;
+  padding: 16px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg);
+}
+
+.win-color-picker__spectrum {
+  position: relative;
+  min-height: 220px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: crosshair;
+  background:
+    linear-gradient(to top, #000, transparent),
+    linear-gradient(to right, #fff, hsl(var(--picker-hue) 100% 50%));
+}
+
+.win-color-picker__cursor {
+  position: absolute;
+  left: 60%;
+  top: 30%;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.win-color-picker__side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.win-color-picker__sliders { display: flex; flex-direction: column; gap: 6px; }
+.win-color-picker__slider-label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--win-text-secondary);
+  font-size: 12px;
+}
+
+.win-color-picker__hue,
+.win-color-picker__alpha {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 18px;
+  border: 1px solid var(--win-control-stroke);
+  border-radius: 9px;
+  background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+  cursor: default;
+}
+
+.win-color-picker__alpha {
+  background:
+    linear-gradient(to right, transparent, var(--picker-color)),
+    repeating-conic-gradient(#ccc 0 25%, #fff 0 50%) 0 0 / 12px 12px;
+}
+
+.win-color-picker__hue::-webkit-slider-thumb,
+.win-color-picker__alpha::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 24px;
+  margin-top: -3px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.win-color-picker__preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.win-color-picker__swatch {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  border: 1px solid var(--win-control-stroke-secondary);
+  background: var(--picker-color);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.win-color-picker__values { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.win-color-picker__hex {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--win-control-stroke);
+  border-radius: 4px;
+  background: var(--win-control-bg);
+  font-family: var(--win-font-mono);
+  font-size: 12px;
+}
+.win-color-picker__hex input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-family: inherit;
+  font-size: 12px;
+  outline: 0;
+}
+.win-color-picker__swatches {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+}
+.win-color-picker__swatch-button {
+  aspect-ratio: 1;
+  border: 1px solid var(--win-control-stroke);
+  border-radius: 3px;
+  background: var(--swatch);
+  cursor: default;
+}
+.win-color-picker__swatch-button:hover { transform: scale(1.12); }
+.win-color-picker__label { color: var(--win-text-secondary); font-size: 12px; }
+.win-color-picker--compact { grid-template-columns: 1fr; max-width: 300px; }
+.win-color-picker--compact .win-color-picker__spectrum { min-height: 150px; }

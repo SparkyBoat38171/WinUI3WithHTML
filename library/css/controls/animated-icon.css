@@ -1,0 +1,30 @@
+/* WinUI 3 — AnimatedIcon */
+.win-animated-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  color: var(--win-text-primary);
+  font-family: var(--win-font-icon);
+  font-size: 24px;
+  cursor: default;
+  transition: background var(--win-duration-fast) var(--win-ease-standard);
+  overflow: hidden;
+}
+.win-animated-icon:hover { background: var(--win-subtle-hover); }
+.win-animated-icon .win-icon { transition: transform 250ms var(--win-ease-decelerate); }
+.win-animated-icon:hover .win-icon { transform: scale(1.1); }
+.win-animated-icon.is-playing .win-icon { animation: win-animated-icon-spin 900ms var(--win-ease-standard); }
+@keyframes win-animated-icon-spin {
+  0% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(180deg) scale(1.16); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.win-animated-icon--check.is-playing .win-icon { animation: win-animated-icon-check 500ms var(--win-ease-decelerate); }
+@keyframes win-animated-icon-check {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}

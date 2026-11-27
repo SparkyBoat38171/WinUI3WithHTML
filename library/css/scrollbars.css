@@ -1,0 +1,68 @@
+/* WinUI 3 — auto-hiding overlay scrollbars
+   The scrollbar stays layout-stable and only the visible thumb changes:
+   active (6px) -> thin (2px) after 3s -> hidden when the pointer leaves. */
+
+@supports not selector(::-webkit-scrollbar) {
+  .win-scroll-host {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .win-scroll-host.is-scrollbar-active,
+  .win-scroll-host.is-scrollbar-thin {
+    scrollbar-color: var(--win-text-tertiary) transparent;
+  }
+}
+
+.win-scroll-host::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.win-scroll-host::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.win-scroll-host::-webkit-scrollbar-thumb {
+  min-height: 28px;
+  border: 5px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  background-clip: content-box;
+  transition: background-color 180ms linear, border-width 180ms var(--win-ease-decelerate);
+}
+
+.win-scroll-host.is-scrollbar-active {
+  scrollbar-color: var(--win-text-tertiary) transparent;
+}
+
+.win-scroll-host.is-scrollbar-active::-webkit-scrollbar-thumb {
+  border-width: 3px;
+  background-color: var(--win-text-tertiary);
+}
+
+.win-scroll-host.is-scrollbar-thin {
+  scrollbar-color: var(--win-text-tertiary) transparent;
+}
+
+.win-scroll-host.is-scrollbar-thin::-webkit-scrollbar-thumb {
+  border-width: 5px;
+  background-color: var(--win-text-tertiary);
+}
+
+.win-scroll-host.is-scrollbar-hidden {
+  scrollbar-color: transparent transparent;
+}
+
+.win-scroll-host.is-scrollbar-hidden::-webkit-scrollbar-thumb {
+  border-width: 5px;
+  background-color: transparent;
+}
+
+.win-scroll-host::-webkit-scrollbar-thumb:hover {
+  background-color: var(--win-text-secondary);
+}
+
+.win-scroll-host::-webkit-scrollbar-corner {
+  background: transparent;
+}

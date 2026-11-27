@@ -1,0 +1,24 @@
+/* WinUI 3 — RepeatButton (visual shell, behavior in JS) */
+.win-repeat-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: var(--win-control-height);
+  padding: 4px 11px;
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+  user-select: none;
+  transition: background var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-repeat-button:hover { background: var(--win-control-bg-hover); }
+.win-repeat-button:active { background: var(--win-control-bg-pressed); color: var(--win-text-secondary); }
+.win-repeat-button:disabled { background: var(--win-control-bg-disabled); color: var(--win-text-disabled); }
+.win-repeat-button.is-repeating { background: var(--win-control-bg-pressed); }

@@ -1,0 +1,16 @@
+/* WinUI 3 — AppBarSeparator */
+.win-appbar-separator {
+  display: block;
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  flex: none;
+  background: var(--win-divider-stroke);
+  border: 0;
+  align-self: center;
+}
+
+.win-appbar-separator--vertical {
+  width: 1px;
+  height: 20px;
+}

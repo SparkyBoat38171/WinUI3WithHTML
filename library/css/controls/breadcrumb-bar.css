@@ -1,0 +1,47 @@
+/* WinUI 3 — BreadcrumbBar */
+.win-breadcrumb-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 32px;
+  gap: 0;
+  color: var(--win-text-primary);
+}
+
+.win-breadcrumb-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 2px 6px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-size: 14px;
+  cursor: default;
+}
+.win-breadcrumb-bar__item:hover { background: var(--win-subtle-hover); color: var(--win-text-primary); }
+.win-breadcrumb-bar__item.is-current { color: var(--win-text-primary); font-weight: 600; cursor: default; }
+.win-breadcrumb-bar__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  color: var(--win-text-tertiary);
+  font-family: var(--win-font-icon);
+  font-size: 8px;
+  line-height: 1;
+  flex: none;
+}
+.win-breadcrumb-bar__ellipsis {
+  width: 28px;
+  height: 24px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 14px;
+}

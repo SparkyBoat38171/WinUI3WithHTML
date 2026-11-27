@@ -1,0 +1,60 @@
+/* WinUI 3 — App notifications (web toast simulation) */
+.win-toast-region {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.win-toast {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 8px;
+  background: var(--win-flyout-acrylic);
+  -webkit-backdrop-filter: blur(30px) saturate(125%);
+  backdrop-filter: blur(30px) saturate(125%);
+  box-shadow: var(--win-shadow-flyout);
+  pointer-events: auto;
+  animation: win-toast-in 300ms var(--win-ease-decelerate);
+}
+.win-toast.is-closing { animation: win-toast-out 200ms var(--win-ease-accelerate) forwards; }
+@keyframes win-toast-in {
+  from { opacity: 0; transform: translateX(36px) scale(0.98); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes win-toast-out {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(24px); }
+}
+.win-toast__icon {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: var(--win-accent);
+  color: var(--win-on-accent);
+}
+.win-toast__title { font-size: 14px; font-weight: 600; }
+.win-toast__message { margin-top: 2px; color: var(--win-text-secondary); font-size: 12px; line-height: 16px; }
+.win-toast__close {
+  margin-left: auto;
+  align-self: flex-start;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 10px;
+  cursor: default;
+}

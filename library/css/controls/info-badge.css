@@ -1,0 +1,37 @@
+/* WinUI 3 — InfoBadge */
+.win-info-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--win-accent);
+  color: var(--win-on-accent);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 0 0 2px var(--win-mica-bg);
+  vertical-align: middle;
+}
+.win-info-badge:empty {
+  min-width: 6px;
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border-radius: 50%;
+}
+.win-info-badge--small { min-width: 6px; width: 6px; height: 6px; padding: 0; }
+.win-info-badge--attention { background: var(--win-critical); color: #fff; }
+.win-info-badge--success { background: var(--win-success); color: #fff; }
+.win-info-badge--caution { background: var(--win-caution); color: #1a1a1a; }
+.win-info-badge--informational { background: var(--win-accent); }
+.win-badge-anchor { position: relative; display: inline-flex; }
+.win-badge-anchor > .win-info-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  box-shadow: 0 0 0 2px var(--win-mica-bg);
+}

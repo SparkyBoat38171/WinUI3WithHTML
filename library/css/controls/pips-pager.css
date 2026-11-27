@@ -1,0 +1,44 @@
+/* WinUI 3 — PipsPager */
+.win-pips-pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.win-pips-pager__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 10px;
+  cursor: default;
+}
+.win-pips-pager__nav:hover { background: var(--win-subtle-hover); color: var(--win-text-primary); }
+.win-pips-pager__nav:disabled { color: var(--win-text-disabled); background: transparent; }
+
+.win-pips-pager__pips { display: flex; align-items: center; gap: 8px; }
+
+.win-pip {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: var(--win-text-tertiary);
+  cursor: default;
+  transition:
+    width 167ms var(--win-ease-decelerate),
+    background 167ms var(--win-ease-standard);
+}
+.win-pip:hover { background: var(--win-text-secondary); }
+.win-pip.is-selected { width: 20px; background: var(--win-accent); }
+.win-pips-pager--vertical { flex-direction: column; }
+.win-pips-pager--vertical .win-pips-pager__pips { flex-direction: column; }
+.win-pips-pager--vertical .win-pip.is-selected { width: 8px; height: 20px; }

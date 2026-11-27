@@ -1,0 +1,40 @@
+/* WinUI 3 — ParallaxView */
+.win-parallax {
+  position: relative;
+  height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: var(--win-corner-card);
+  border: 1px solid var(--win-card-stroke);
+  background: var(--win-card-bg-secondary);
+}
+.win-parallax__background {
+  position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+.win-parallax__background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, var(--win-card-bg-secondary));
+}
+.win-parallax__layer {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.win-parallax__layer h3 { font-size: 22px; margin-bottom: 2px; }
+.win-parallax__layer p { font-size: 12px; opacity: 0.85; }
+.win-parallax__content { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.win-parallax__card {
+  padding: 16px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 6px;
+  background: var(--win-card-bg);
+}

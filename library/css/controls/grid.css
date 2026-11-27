@@ -1,0 +1,31 @@
+/* WinUI 3 — Grid */
+.win-grid-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(72px, auto);
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+.win-grid-panel__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 4px;
+  background: var(--win-card-bg);
+  color: var(--win-text-primary);
+  font-size: 13px;
+  text-align: center;
+}
+.win-grid-panel__cell--span-2 { grid-column: span 2; }
+.win-grid-panel__cell--row-2 { grid-row: span 2; }
+.win-grid-panel--lines {
+  background-image:
+    linear-gradient(to right, var(--win-divider-stroke) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--win-divider-stroke) 1px, transparent 1px);
+  background-size: 33.333% 100%, 100% 72px;
+}

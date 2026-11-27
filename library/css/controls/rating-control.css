@@ -1,0 +1,40 @@
+/* WinUI 3 — RatingControl */
+.win-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 32px;
+  color: var(--win-text-primary);
+}
+
+.win-rating__star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--win-corner-control);
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 22px;
+  line-height: 1;
+  cursor: default;
+  transition:
+    color var(--win-duration-fast) var(--win-ease-standard),
+    transform var(--win-duration-fast) var(--win-ease-decelerate);
+}
+
+.win-rating__star:hover { color: var(--win-text-primary); transform: scale(1.12); }
+.win-rating__star.is-filled { color: var(--win-accent); }
+.win-rating--small .win-rating__star { width: 24px; height: 24px; font-size: 16px; }
+.win-rating--large .win-rating__star { width: 40px; height: 40px; font-size: 30px; }
+.win-rating__value {
+  margin-left: 8px;
+  min-width: 2.5em;
+  color: var(--win-text-secondary);
+  font-size: 12px;
+}
+.win-rating--disabled { opacity: 0.5; pointer-events: none; }

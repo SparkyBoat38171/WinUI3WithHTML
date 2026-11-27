@@ -1,0 +1,103 @@
+/* WinUI 3 — CheckBox */
+.win-checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 0;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+  cursor: default;
+  user-select: none;
+  position: relative;
+}
+
+.win-checkbox > input {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.win-checkbox__box {
+  position: relative;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--win-control-stroke-secondary);
+  border-radius: 4px;
+  background: var(--win-control-bg);
+  transition:
+    background var(--win-duration-normal) var(--win-ease-standard),
+    border-color var(--win-duration-normal) var(--win-ease-standard),
+    transform var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-checkbox:hover .win-checkbox__box {
+  background: var(--win-control-bg-hover);
+  border-color: var(--win-control-stroke-secondary);
+}
+
+.win-checkbox:active .win-checkbox__box { transform: scale(0.9); }
+
+.win-checkbox__box::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2.5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--win-on-accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transform-origin: 50% 50%;
+  transition: transform 120ms var(--win-ease-decelerate);
+}
+
+.win-checkbox > input:checked + .win-checkbox__box {
+  background: var(--win-accent);
+  border-color: var(--win-accent);
+}
+
+.win-checkbox > input:checked + .win-checkbox__box::after { transform: rotate(45deg) scale(1); }
+
+.win-checkbox > input:indeterminate + .win-checkbox__box {
+  background: var(--win-accent);
+  border-color: var(--win-accent);
+}
+
+.win-checkbox > input:indeterminate + .win-checkbox__box::after {
+  left: 4px;
+  top: 8px;
+  width: 10px;
+  height: 2px;
+  border: 0;
+  background: var(--win-on-accent);
+  transform: none;
+}
+
+.win-checkbox__label {
+  padding-top: 0;
+  min-width: 0;
+}
+
+.win-checkbox--disabled,
+.win-checkbox:has(input:disabled) {
+  color: var(--win-text-disabled);
+  cursor: default;
+}
+
+.win-checkbox:has(input:disabled) .win-checkbox__box {
+  background: var(--win-control-bg-disabled);
+  border-color: var(--win-control-stroke-disabled);
+}
+
+.win-checkbox > input:focus-visible + .win-checkbox__box {
+  outline: 2px solid var(--win-focus-outer);
+  outline-offset: 2px;
+}
+
+.win-checkbox--compact { min-height: 24px; padding: 2px 0; }

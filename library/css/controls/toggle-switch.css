@@ -1,0 +1,94 @@
+/* WinUI 3 — ToggleSwitch */
+.win-toggle-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 32px;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+  user-select: none;
+  position: relative;
+}
+
+.win-toggle-switch > input {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.win-toggle-switch__track {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 20px;
+  border: 1px solid var(--win-control-stroke-secondary);
+  border-radius: 10px;
+  background: var(--win-control-bg);
+  transition:
+    background var(--win-duration-normal) var(--win-ease-standard),
+    border-color var(--win-duration-normal) var(--win-ease-standard);
+}
+
+.win-toggle-switch__knob {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--win-text-secondary);
+  box-shadow: 0 0 0 1px var(--win-control-stroke-secondary);
+  transition:
+    transform 167ms var(--win-ease-point-to-point),
+    background var(--win-duration-normal) var(--win-ease-standard),
+    width 167ms var(--win-ease-point-to-point),
+    height 167ms var(--win-ease-point-to-point),
+    left 167ms var(--win-ease-point-to-point),
+    top 167ms var(--win-ease-point-to-point);
+}
+
+.win-toggle-switch:hover .win-toggle-switch__track { background: var(--win-control-bg-hover); }
+
+.win-toggle-switch > input:checked + .win-toggle-switch__track {
+  background: var(--win-accent);
+  border-color: var(--win-accent);
+}
+
+.win-toggle-switch > input:checked + .win-toggle-switch__track .win-toggle-switch__knob {
+  left: 24px;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  background: var(--win-on-accent);
+  box-shadow: none;
+}
+
+.win-toggle-switch > input:active + .win-toggle-switch__track .win-toggle-switch__knob {
+  width: 17px;
+  height: 17px;
+  top: 0.5px;
+}
+
+.win-toggle-switch > input:checked:active + .win-toggle-switch__track .win-toggle-switch__knob {
+  left: 19px;
+}
+
+.win-toggle-switch__state {
+  color: var(--win-text-secondary);
+  min-width: 22px;
+  font-size: 12px;
+}
+
+.win-toggle-switch > input:focus-visible + .win-toggle-switch__track {
+  outline: 2px solid var(--win-focus-outer);
+  outline-offset: 2px;
+}
+
+.win-toggle-switch:has(input:disabled) { color: var(--win-text-disabled); cursor: default; }
+.win-toggle-switch:has(input:disabled) .win-toggle-switch__track {
+  background: var(--win-control-bg-disabled);
+  border-color: var(--win-control-stroke-disabled);
+}

@@ -1,0 +1,47 @@
+/* WinUI 3 — GridView */
+.win-grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  padding: 4px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  user-select: none;
+}
+
+.win-grid-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 8px;
+  background: var(--win-card-bg);
+  cursor: default;
+  transition:
+    background var(--win-duration-fast) var(--win-ease-standard),
+    border-color var(--win-duration-fast) var(--win-ease-standard),
+    transform var(--win-duration-fast) var(--win-ease-standard);
+}
+.win-grid-item:hover { background: var(--win-card-bg-secondary); transform: translateY(-1px); }
+.win-grid-item.is-selected {
+  border-color: var(--win-accent);
+  background: var(--win-accent-selected);
+}
+.win-grid-item__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--win-accent-selected), transparent);
+  color: var(--win-accent-text);
+  font-family: var(--win-font-icon);
+  font-size: 30px;
+}
+.win-grid-item__title { font-size: 14px; font-weight: 600; }
+.win-grid-item__subtitle { color: var(--win-text-secondary); font-size: 12px; line-height: 16px; }
+.win-grid-view--borderless { border: 0; background: transparent; padding: 0; }

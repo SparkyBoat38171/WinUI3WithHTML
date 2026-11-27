@@ -1,0 +1,21 @@
+/* WinUI 3 — Shape / Line */
+.win-shape-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px;
+  border: 1px dashed var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+.win-shape-stage svg { overflow: visible; }
+.win-shape-rect { width: 100px; height: 70px; border-radius: 4px; background: var(--win-accent); }
+.win-shape-ellipse { width: 90px; height: 90px; border-radius: 50%; background: #8764b8; }
+.win-shape-line { width: 120px; height: 3px; background: var(--win-accent); transform: rotate(-24deg); }
+.win-shape-path { fill: none; stroke: var(--win-accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.win-shape-polygon { fill: var(--win-accent); }
+.win-shape-label { color: var(--win-text-secondary); font-size: 11px; text-align: center; }
+.win-shape-figure { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.win-shape-stroke-options { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }

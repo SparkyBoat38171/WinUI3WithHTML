@@ -1,0 +1,25 @@
+/* WinUI 3 — Viewbox */
+.win-viewbox-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 20px;
+  border: 1px dashed var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  overflow: hidden;
+}
+.win-viewbox-demo__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 36px;
+  border: 2px solid var(--win-accent);
+  border-radius: 12px;
+  background: var(--win-accent-selected);
+  transform-origin: center;
+  transition: transform 250ms var(--win-ease-decelerate);
+}
+.win-viewbox-demo__content .win-icon { font-size: 64px; color: var(--win-accent); }
+.win-viewbox-demo__content span { font-size: 24px; font-weight: 600; }

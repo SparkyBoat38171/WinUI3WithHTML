@@ -1,0 +1,80 @@
+/* WinUI 3 — NumberBox */
+.win-number-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--win-control-height);
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  overflow: hidden;
+}
+
+.win-number-box:hover { background: var(--win-control-bg-hover); }
+.win-number-box:focus-within { background: var(--win-control-bg-quarternary); }
+
+.win-number-box::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--win-accent);
+  box-shadow: 0 1px 7px rgba(var(--win-accent-rgb), 0.55);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition:
+    width 260ms var(--win-ease-decelerate),
+    opacity 120ms linear;
+  pointer-events: none;
+}
+
+.win-number-box:focus-within::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.win-number-box__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 5px 8px 6px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  text-align: left;
+  outline: 0;
+}
+
+.win-number-box--wrap { text-align: center; }
+
+.win-number-box__spin {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 100%;
+  border-left: 1px solid var(--win-control-stroke);
+}
+
+.win-number-box__spin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 9px;
+  line-height: 1;
+  cursor: default;
+}
+
+.win-number-box__spin button:hover { background: var(--win-subtle-hover); color: var(--win-text-primary); }
+.win-number-box__spin button:active { background: var(--win-subtle-pressed); }
+.win-number-box__spin button:first-child { border-bottom: 1px solid var(--win-control-stroke); }

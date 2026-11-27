@@ -1,0 +1,38 @@
+/* WinUI 3 — PagerControl */
+.win-pager {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 40px;
+  color: var(--win-text-primary);
+}
+
+.win-pager__summary { color: var(--win-text-secondary); font-size: 12px; }
+.win-pager__buttons { display: flex; align-items: center; gap: 2px; }
+.win-pager__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  cursor: default;
+}
+.win-pager__button:hover { background: var(--win-subtle-hover); }
+.win-pager__button.is-selected {
+  background: var(--win-accent);
+  color: var(--win-on-accent);
+}
+.win-pager__button:disabled { color: var(--win-text-disabled); background: transparent; }
+.win-pager__ellipsis { color: var(--win-text-tertiary); padding: 0 4px; }
+.win-pager__nav { font-family: var(--win-font-icon); font-size: 9px; }
+.win-pager__nav .win-icon { width: 10px; height: 10px; font-size: 9px; }
+.win-pager__combo { margin-left: 4px; }
+.win-pager--compact .win-pager__button { min-width: 28px; height: 28px; }

@@ -1,0 +1,39 @@
+/* WinUI 3 — RichTextBlock */
+.win-rich-text-block {
+  max-width: 760px;
+  color: var(--win-text-primary);
+  font-family: var(--win-font-family);
+  font-size: 14px;
+  line-height: 22px;
+}
+.win-rich-text-block p { margin: 0 0 12px; }
+.win-rich-text-block p:last-child { margin-bottom: 0; }
+.win-rich-text-block a {
+  color: var(--win-text-link);
+  text-decoration: none;
+  cursor: pointer;
+}
+.win-rich-text-block a:hover { color: var(--win-accent-text); }
+.win-rich-text-block strong { font-weight: 700; }
+.win-rich-text-block em { font-style: italic; }
+.win-rich-text-block code {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--win-control-bg-secondary);
+  font-family: var(--win-font-mono);
+  font-size: 12px;
+}
+.win-rich-text-block blockquote {
+  margin: 12px 0;
+  padding: 4px 0 4px 14px;
+  border-left: 3px solid var(--win-accent);
+  color: var(--win-text-secondary);
+}
+.win-rich-text-block__selection { background: var(--win-accent-selected); color: var(--win-text-primary); }
+.win-rich-text-block__overflow {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.win-rich-text-block__columns { column-count: 2; column-gap: 32px; }

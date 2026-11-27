@@ -1,0 +1,33 @@
+/* WinUI 3 — Popup */
+.win-popup {
+  position: fixed;
+  z-index: 1400;
+  min-width: 120px;
+  padding: 8px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-overlay);
+  background: var(--win-flyout-bg);
+  color: var(--win-text-primary);
+  box-shadow: var(--win-shadow-flyout);
+  animation: win-pop-in var(--win-duration-slow) var(--win-ease-decelerate);
+}
+.win-popup__arrow { position: absolute; width: 10px; height: 10px; background: inherit; transform: rotate(45deg); }
+.win-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1399;
+  background: transparent;
+}
+.win-popup-stage {
+  position: relative;
+  min-height: 180px;
+  padding: 24px;
+  border: 1px dashed var(--win-control-stroke-secondary);
+  border-radius: 8px;
+}
+.win-popup-target {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

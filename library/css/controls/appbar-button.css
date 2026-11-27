@@ -1,0 +1,43 @@
+/* WinUI 3 — AppBarButton */
+.win-appbar-button {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 40px;
+  height: 48px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--win-corner-control);
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 12px;
+  line-height: 16px;
+  cursor: default;
+  user-select: none;
+  transition:
+    background var(--win-duration-fast) var(--win-ease-standard),
+    color var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-appbar-button:hover { background: var(--win-subtle-hover); }
+.win-appbar-button:active { background: var(--win-subtle-pressed); color: var(--win-text-secondary); }
+.win-appbar-button .win-icon { font-size: 16px; }
+.win-appbar-button__label { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.win-appbar-button--compact {
+  flex-direction: row;
+  gap: 8px;
+  height: 32px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.win-appbar-button--compact .win-appbar-button__label { font-size: 14px; }
+
+.win-appbar-button:disabled {
+  color: var(--win-text-disabled);
+  background: transparent;
+}
