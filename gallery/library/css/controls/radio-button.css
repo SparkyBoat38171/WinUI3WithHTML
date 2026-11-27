@@ -1,0 +1,66 @@
+/* WinUI 3 — RadioButton */
+.win-radio {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 0;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+  cursor: default;
+  user-select: none;
+  position: relative;
+}
+
+.win-radio > input {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.win-radio__dot {
+  position: relative;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--win-control-stroke-secondary);
+  border-radius: 50%;
+  background: var(--win-control-bg);
+  transition:
+    border-color var(--win-duration-normal) var(--win-ease-standard),
+    background var(--win-duration-normal) var(--win-ease-standard),
+    transform var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-radio:hover .win-radio__dot { background: var(--win-control-bg-hover); }
+.win-radio:active .win-radio__dot { transform: scale(0.9); }
+
+.win-radio__dot::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--win-on-accent);
+  transform: scale(0);
+  transition: transform 120ms var(--win-ease-decelerate);
+}
+
+.win-radio > input:checked + .win-radio__dot {
+  background: var(--win-accent);
+  border-color: var(--win-accent);
+}
+
+.win-radio > input:checked + .win-radio__dot::after { transform: scale(1); }
+.win-radio > input:focus-visible + .win-radio__dot {
+  outline: 2px solid var(--win-focus-outer);
+  outline-offset: 2px;
+}
+
+.win-radio:has(input:disabled) { color: var(--win-text-disabled); cursor: default; }
+.win-radio:has(input:disabled) .win-radio__dot {
+  background: var(--win-control-bg-disabled);
+  border-color: var(--win-control-stroke-disabled);
+}

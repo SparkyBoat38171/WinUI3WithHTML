@@ -1,0 +1,40 @@
+/* WinUI 3 — AutoSuggestBox */
+.win-auto-suggest {
+  position: relative;
+  width: 100%;
+  min-width: 160px;
+}
+
+.win-auto-suggest .win-textbox-wrap { padding-right: 4px; }
+
+.win-auto-suggest__popup {
+  position: absolute;
+  z-index: 900;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  padding: 4px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-overlay);
+  background: var(--win-flyout-bg);
+  box-shadow: var(--win-shadow-flyout);
+  transform-origin: top center;
+  animation: win-flyout-in var(--win-duration-normal) var(--win-ease-decelerate);
+}
+
+.win-auto-suggest__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: var(--win-text-primary);
+  cursor: default;
+}
+
+.win-auto-suggest__item:hover,
+.win-auto-suggest__item.is-active { background: var(--win-subtle-hover); }
+.win-auto-suggest__item mark { background: transparent; color: var(--win-accent-text); font-weight: 600; }
+.win-auto-suggest__empty { padding: 10px; color: var(--win-text-secondary); font-size: 13px; }
+.win-auto-suggest__icon { color: var(--win-text-secondary); font-size: 14px; }

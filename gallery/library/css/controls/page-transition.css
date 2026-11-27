@@ -1,0 +1,39 @@
+/* WinUI 3 — Page / theme transitions */
+.win-transition-stage {
+  position: relative;
+  min-height: 240px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  overflow: hidden;
+}
+.win-transition-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  background: var(--win-card-bg);
+  color: var(--win-text-primary);
+}
+.win-transition-page .win-icon { font-size: 44px; color: var(--win-accent); }
+.win-transition-page.is-leaving { animation: win-page-leave 250ms var(--win-ease-accelerate) forwards; }
+.win-transition-page.is-entering { animation: win-page-enter 333ms var(--win-ease-decelerate) both; }
+@keyframes win-page-leave {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to { opacity: 0; transform: translateX(-48px) scale(0.96); }
+}
+.win-transition-options { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.win-transition-item {
+  padding: 12px 16px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 6px;
+  background: var(--win-card-bg);
+  animation: win-slide-up-in 400ms var(--win-ease-decelerate) both;
+}
+.win-transition-item:nth-child(2) { animation-delay: 60ms; }
+.win-transition-item:nth-child(3) { animation-delay: 120ms; }
+.win-transition-item:nth-child(4) { animation-delay: 180ms; }

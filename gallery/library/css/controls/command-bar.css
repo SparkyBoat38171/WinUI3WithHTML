@@ -1,0 +1,35 @@
+/* WinUI 3 — CommandBar */
+.win-command-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 48px;
+  padding: 4px 8px;
+  background: var(--win-commandbar-bg);
+  border-bottom: 1px solid var(--win-divider-stroke);
+}
+
+.win-command-bar--floating {
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  box-shadow: var(--win-shadow-card);
+}
+
+.win-command-bar__primary,
+.win-command-bar__secondary {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.win-command-bar__secondary { margin-left: auto; }
+.win-command-bar__overflow {
+  margin-left: auto;
+}
+.win-command-bar--compact .win-appbar-button {
+  flex-direction: row;
+  height: 32px;
+  font-size: 14px;
+}
+.win-command-bar--compact .win-appbar-button__label { font-size: 14px; }

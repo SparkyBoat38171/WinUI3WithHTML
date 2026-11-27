@@ -1,0 +1,39 @@
+/* WinUI 3 — DatePicker */
+.win-date-picker {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.win-date-picker__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: var(--win-control-height);
+  padding: 4px 10px;
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+}
+
+.win-date-picker__button:hover { background: var(--win-control-bg-hover); }
+.win-date-picker__part { padding: 2px 4px; border-radius: 2px; }
+.win-date-picker__part:hover { background: var(--win-subtle-hover); }
+.win-date-picker__button .win-icon { margin-left: 6px; color: var(--win-text-secondary); font-size: 14px; }
+.win-date-picker__flyout {
+  position: absolute;
+  z-index: 902;
+  top: calc(100% + 4px);
+  left: 0;
+  padding: 8px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-overlay);
+  background: var(--win-flyout-bg);
+  box-shadow: var(--win-shadow-flyout);
+  animation: win-flyout-in var(--win-duration-normal) var(--win-ease-decelerate);
+}

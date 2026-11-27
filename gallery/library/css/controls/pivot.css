@@ -1,0 +1,48 @@
+/* WinUI 3 — Pivot */
+.win-pivot {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.win-pivot__headers {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--win-divider-stroke);
+}
+.win-pivot__headers::-webkit-scrollbar { display: none; }
+
+.win-pivot__header {
+  position: relative;
+  height: 48px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  cursor: default;
+  transition: color 167ms var(--win-ease-standard);
+}
+.win-pivot__header:hover { color: var(--win-text-primary); }
+.win-pivot__header.is-selected { color: var(--win-text-primary); font-weight: 600; }
+.win-pivot__header.is-selected::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--win-accent);
+  animation: win-pivot-underline 250ms var(--win-ease-decelerate);
+}
+@keyframes win-pivot-underline {
+  from { transform: scaleX(0.2); }
+  to { transform: scaleX(1); }
+}
+.win-pivot__content { padding: 24px 4px; flex: 1; overflow: auto; }
+.win-pivot__panel { animation: win-slide-left-in 250ms var(--win-ease-decelerate); }

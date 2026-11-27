@@ -1,0 +1,28 @@
+/* WinUI 3 — MenuBar */
+.win-menu-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 40px;
+  padding: 4px;
+  border-bottom: 1px solid var(--win-divider-stroke);
+  background: var(--win-layer-bg);
+}
+
+.win-menu-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+}
+.win-menu-bar__item:hover { background: var(--win-subtle-hover); }
+.win-menu-bar__item[aria-expanded="true"] { background: var(--win-subtle-pressed); }
+.win-menu-bar__item .win-icon { font-size: 10px; color: var(--win-text-secondary); }
+.win-menu-bar--rounded { border: 1px solid var(--win-card-stroke); border-radius: 8px; }

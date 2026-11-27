@@ -1,0 +1,102 @@
+/* ==========================================================================
+   WinUI 3 for the Web — icon primitives
+   Uses Segoe Fluent Icons and falls back to Segoe MDL2 Assets.
+   ========================================================================== */
+
+.win-icon-glyph {
+  font-family: var(--win-font-icon);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  text-rendering: auto;
+  text-align: center;
+}
+
+.win-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  line-height: 1;
+  text-align: center;
+}
+
+.win-icon--play {
+  transform: translateX(1px);
+}
+
+.win-icon-button > .win-icon,
+.win-caption-button > .win-icon,
+.win-appbar-button > .win-icon,
+.win-appbar-toggle-button > .win-icon,
+.win-nav-view__toggle > .win-icon,
+.win-title-bar__pane-toggle > .win-icon,
+.win-title-bar__back > .win-icon {
+  margin: 0;
+  line-height: 1;
+  transform: none;
+}
+
+.win-media-player__big-play > .win-icon {
+  transform: translateX(2px);
+}
+
+.win-media-player__button[data-media-play] > .win-icon,
+.win-animated-visual-player__button--play > .win-icon {
+  transform: translateX(1px);
+}
+
+.win-image-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.win-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--win-control-height);
+  min-width: var(--win-control-height);
+  height: var(--win-control-height);
+  padding: 0;
+  border-radius: var(--win-corner-control);
+  color: var(--win-text-primary);
+  background: transparent;
+  border: 1px solid transparent;
+  transition:
+    background var(--win-duration-fast) var(--win-ease-standard),
+    color var(--win-duration-fast) var(--win-ease-standard),
+    border-color var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-icon-button:hover {
+  background: var(--win-subtle-hover);
+}
+
+.win-icon-button:active {
+  background: var(--win-subtle-pressed);
+  color: var(--win-text-secondary);
+}
+
+.win-icon-button:disabled {
+  color: var(--win-text-disabled);
+  background: transparent;
+}
+
+.win-icon-button--accent { color: var(--win-accent-text); }
+
+.win-avatar-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--win-accent);
+  color: var(--win-on-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

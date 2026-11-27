@@ -1,0 +1,27 @@
+/* WinUI 3 — ItemsRepeater */
+.win-items-repeater {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  max-height: 320px;
+  overflow: auto;
+}
+.win-items-repeater__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 64px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 6px;
+  background: var(--win-card-bg);
+  color: var(--win-text-primary);
+  font-size: 12px;
+  transition: transform var(--win-duration-fast) var(--win-ease-decelerate);
+}
+.win-items-repeater__item:hover { transform: scale(1.03); border-color: var(--win-accent); }
+.win-items-repeater--uniform .win-items-repeater__item { width: 72px; height: 72px; }

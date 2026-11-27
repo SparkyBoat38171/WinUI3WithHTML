@@ -1,0 +1,77 @@
+/* WinUI 3 — ContentDialog */
+.win-dialog-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--win-smoke);
+  -webkit-backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.5px);
+  animation: win-fade-in 167ms var(--win-ease-standard);
+}
+
+.win-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(548px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 24px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-overlay);
+  background: var(--win-dialog-bg);
+  color: var(--win-text-primary);
+  box-shadow: var(--win-shadow-dialog);
+  animation: win-dialog-in 250ms var(--win-ease-decelerate);
+}
+
+@keyframes win-dialog-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.win-dialog--closing { animation: win-dialog-out 167ms var(--win-ease-accelerate) forwards; }
+
+@keyframes win-dialog-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.96); }
+}
+
+.win-dialog__title {
+  padding-right: 12px;
+  font-family: var(--win-font-display);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.win-dialog__body {
+  flex: 1;
+  min-height: 0;
+  margin-top: 16px;
+  overflow-y: auto;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+}
+.win-dialog__body p + p { margin-top: 12px; }
+.win-dialog__commands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+.win-dialog__commands .win-button { min-width: 92px; }
+.win-dialog--stretch .win-dialog__commands {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.win-dialog--stretch .win-dialog__commands .win-button { width: 100%; }
+.win-dialog__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.win-dialog__content-stack { display: flex; flex-direction: column; gap: 12px; }

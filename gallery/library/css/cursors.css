@@ -1,0 +1,46 @@
+/* WinUI uses the arrow cursor for buttons and item containers.
+   Only true hyperlinks use the hand cursor. */
+.win-button,
+.win-toggle-button,
+.win-repeat-button,
+.win-drop-down-button,
+.win-split-button,
+.win-split-button__primary,
+.win-split-button__secondary,
+.win-appbar-button,
+.win-nav-item,
+.win-nav-view__toggle,
+.win-menu-item,
+.win-list-item,
+.win-grid-item,
+.win-tree-item,
+.win-tab-view__tab,
+.win-pips__item,
+.win-pager__button,
+.win-calendar__day,
+.win-combo-box,
+.win-combo-box__button,
+.win-checkbox,
+.win-radio-button,
+.win-toggle-switch,
+.win-slider,
+.win-rating,
+.win-color-picker,
+.win-color-picker__swatch-button,
+.win-title-bar__toggle,
+.win-caption-button,
+.win-number-box__spin button,
+.win-password-box__reveal,
+.win-textbox-wrap__action,
+.win-dialog__close {
+  cursor: default;
+}
+
+.win-hyperlink-button,
+.win-text-block__link,
+.win-rich-text-block a,
+.gallery-menu-link,
+.gallery-doc-link,
+a[href]:not(.win-nav-item):not(.gallery-card):not(.gallery-tile):not(.settings-link) {
+  cursor: pointer;
+}

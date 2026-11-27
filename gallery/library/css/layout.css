@@ -1,0 +1,156 @@
+/* ==========================================================================
+   WinUI 3 for the Web — layout primitives
+   ========================================================================== */
+
+.win-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.win-stack--horizontal {
+  flex-direction: row;
+  align-items: center;
+}
+
+.win-stack--wrap {
+  flex-wrap: wrap;
+}
+
+.win-stack--gap-1 { gap: 4px; }
+.win-stack--gap-2 { gap: 8px; }
+.win-stack--gap-3 { gap: 12px; }
+.win-stack--gap-4 { gap: 16px; }
+.win-stack--gap-5 { gap: 20px; }
+.win-stack--gap-6 { gap: 24px; }
+.win-stack--gap-8 { gap: 32px; }
+
+.win-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.win-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.win-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.win-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.win-grid--auto {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.win-grid--auto-sm {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+@media (max-width: 720px) {
+  .win-grid--2,
+  .win-grid--3,
+  .win-grid--4 { grid-template-columns: 1fr; }
+}
+
+.win-card {
+  position: relative;
+  background: var(--win-card-bg);
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  padding: 16px;
+}
+
+.win-card--secondary { background: var(--win-card-bg-secondary); }
+.win-card--elevated { box-shadow: var(--win-shadow-card); }
+
+.win-card--interactive {
+  cursor: default;
+  transition:
+    background var(--win-duration-normal) var(--win-ease-standard),
+    transform var(--win-duration-normal) var(--win-ease-decelerate),
+    box-shadow var(--win-duration-normal) var(--win-ease-standard);
+}
+
+.win-card--interactive:hover {
+  background: var(--win-card-bg-secondary);
+  box-shadow: var(--win-shadow-card);
+  transform: translateY(-1px);
+}
+
+.win-card--interactive:active {
+  transform: scale(0.995);
+}
+
+.win-border {
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-control);
+  padding: 16px;
+}
+
+.win-surface {
+  background: var(--win-layer-bg);
+}
+
+.win-surface--alt {
+  background: var(--win-layer-alt-bg);
+}
+
+.win-spacer {
+  flex: 1;
+}
+
+.win-viewbox {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.win-canvas-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.win-relative { position: relative; }
+.win-absolute { position: absolute; }
+
+/* Simple responsive panel helpers used by sample pages -------------------- */
+.win-split-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 780px) {
+  .win-split-2 { grid-template-columns: 1fr; }
+}
+
+.win-center-stage {
+  display: flex;
+  min-height: 140px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 6px;
+  background:
+    linear-gradient(45deg, transparent 49.5%, var(--win-divider-stroke) 49.5%, var(--win-divider-stroke) 50.5%, transparent 50.5%) 0 0 / 16px 16px,
+    var(--win-card-bg-secondary);
+}
+
+.win-demo-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.win-demo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.win-field-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}

@@ -1,0 +1,20 @@
+/* WinUI 3 — StackPanel */
+.win-stack-panel {
+  display: flex;
+  flex-direction: column;
+}
+.win-stack-panel--horizontal { flex-direction: row; align-items: center; }
+.win-stack-panel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 4px;
+  background: var(--win-card-bg);
+  color: var(--win-text-primary);
+  font-size: 13px;
+}
+.win-stack-panel--horizontal .win-stack-panel__item { min-width: 56px; }

@@ -1,0 +1,96 @@
+/* WinUI 3 — SplitButton */
+.win-split-button {
+  display: inline-flex;
+  height: var(--win-control-height);
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  overflow: hidden;
+  vertical-align: middle;
+  transition: background var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-split-button:hover { background: var(--win-control-bg-hover); }
+
+.win-split-button__primary,
+.win-split-button__secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 4px 11px;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+  cursor: default;
+  transition: background var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-split-button__primary {
+  gap: 8px;
+  min-width: 48px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.win-split-button__secondary {
+  width: 32px;
+  padding: 0;
+  border-left: 1px solid var(--win-control-stroke);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  font-family: var(--win-font-icon);
+  font-size: 9px;
+}
+.win-split-button__secondary .win-icon,
+.win-toggle-split-button__secondary .win-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  font-size: 9px;
+  line-height: 1;
+}
+
+.win-split-button__primary:hover,
+.win-split-button__secondary:hover { background: var(--win-subtle-hover); }
+.win-split-button__primary:active,
+.win-split-button__secondary:active { background: var(--win-subtle-pressed); }
+
+.win-split-button--accent {
+  background: var(--win-accent);
+  border-color: transparent;
+}
+
+.win-split-button--accent .win-split-button__primary,
+.win-split-button--accent .win-split-button__secondary {
+  color: var(--win-on-accent);
+}
+
+.win-split-button--accent .win-split-button__secondary {
+  border-left-color: rgba(255, 255, 255, 0.16);
+}
+
+.win-split-button--accent:hover { background: var(--win-accent-hover); }
+.win-split-button--accent .win-split-button__primary:hover,
+.win-split-button--accent .win-split-button__secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.win-split-button:focus-within {
+  outline: 2px solid var(--win-focus-outer);
+  outline-offset: 2px;
+}
+
+.win-split-button__primary:focus-visible,
+.win-split-button__secondary:focus-visible { outline: none; }
+
+.win-split-button:disabled,
+.win-split-button[aria-disabled="true"] {
+  background: var(--win-control-bg-disabled);
+  border-color: var(--win-control-stroke-disabled);
+}

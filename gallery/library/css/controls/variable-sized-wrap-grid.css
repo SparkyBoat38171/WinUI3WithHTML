@@ -1,0 +1,27 @@
+/* WinUI 3 — VariableSizedWrapGrid */
+.win-vsw-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 72px);
+  grid-auto-rows: 72px;
+  gap: 6px;
+  padding: 10px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+.win-vsw-grid__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 4px;
+  background: var(--win-card-bg);
+  color: var(--win-text-primary);
+  font-size: 12px;
+}
+.win-vsw-grid__item--wide { grid-column: span 2; }
+.win-vsw-grid__item--tall { grid-row: span 2; }
+.win-vsw-grid__item--large { grid-column: span 2; grid-row: span 2; }

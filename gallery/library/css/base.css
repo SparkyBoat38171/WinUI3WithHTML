@@ -1,0 +1,205 @@
+/* ==========================================================================
+   WinUI 3 for the Web — base elements, app frame, icons, utilities
+   ========================================================================== */
+
+.win-app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--win-mica-bg);
+  color: var(--win-text-primary);
+  isolation: isolate;
+}
+
+.win-window {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.win-page {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--win-mica-bg);
+}
+
+.win-page-content {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 36px 40px;
+}
+
+.win-mica {
+  background-color: var(--win-mica-bg);
+  background-image:
+    radial-gradient(1100px 520px at 8% -8%, rgba(var(--win-accent-rgb), 0.08), transparent 60%),
+    radial-gradient(900px 600px at 100% 0%, rgba(150, 90, 255, 0.035), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 40%);
+}
+
+[data-theme="dark"] .win-mica {
+  background-image:
+    radial-gradient(1000px 500px at 10% -10%, rgba(var(--win-accent-rgb), 0.09), transparent 60%),
+    radial-gradient(900px 620px at 100% 0%, rgba(112, 72, 190, 0.06), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 42%);
+}
+
+.win-acrylic {
+  background: var(--win-flyout-acrylic);
+  -webkit-backdrop-filter: blur(30px) saturate(125%);
+  backdrop-filter: blur(30px) saturate(125%);
+}
+
+.win-divider {
+  width: 100%;
+  height: 1px;
+  flex: none;
+  background: var(--win-divider-stroke);
+  border: 0;
+}
+
+.win-divider--vertical {
+  width: 1px;
+  height: auto;
+  align-self: stretch;
+  margin: 4px 4px;
+}
+
+.win-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-family: var(--win-font-icon);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  speak: never;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+.win-icon--12 { font-size: 12px; }
+.win-icon--14 { font-size: 14px; }
+.win-icon--16 { font-size: 16px; }
+.win-icon--18 { font-size: 18px; }
+.win-icon--20 { font-size: 20px; }
+.win-icon--24 { font-size: 24px; }
+.win-icon--32 { font-size: 32px; }
+.win-icon--40 { font-size: 40px; }
+.win-icon--64 { font-size: 64px; }
+
+.win-icon-spin {
+  animation: win-spin 1.4s linear infinite;
+}
+
+@keyframes win-spin {
+  to { transform: rotate(360deg); }
+}
+
+.win-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.win-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.win-scroll {
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.win-stretch { width: 100%; }
+.win-flex { display: flex; }
+.win-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.win-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.win-gap-1 { gap: 4px; }
+.win-gap-2 { gap: 8px; }
+.win-gap-3 { gap: 12px; }
+.win-gap-4 { gap: 16px; }
+.win-gap-5 { gap: 20px; }
+.win-gap-6 { gap: 24px; }
+
+.win-mt-1 { margin-top: 4px; }
+.win-mt-2 { margin-top: 8px; }
+.win-mt-3 { margin-top: 12px; }
+.win-mt-4 { margin-top: 16px; }
+.win-mt-6 { margin-top: 24px; }
+.win-mb-1 { margin-bottom: 4px; }
+.win-mb-2 { margin-bottom: 8px; }
+.win-mb-3 { margin-bottom: 12px; }
+.win-mb-4 { margin-bottom: 16px; }
+.win-mb-6 { margin-bottom: 24px; }
+
+.win-nowrap { white-space: nowrap; }
+.win-rounded { border-radius: var(--win-corner-card); }
+.win-cursor-pointer { cursor: default; }
+
+/* Selection visuals ------------------------------------------------------- */
+.win-selection-indicator {
+  position: relative;
+}
+
+.win-selection-indicator::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--win-accent);
+  transform: translateY(-50%) scaleY(0);
+  transition: transform var(--win-duration-normal) var(--win-ease-decelerate);
+}
+
+.win-selection-indicator.is-selected::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* Fluid content ----------------------------------------------------------- */
+.win-container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  padding-inline: 36px;
+}
+
+@media (max-width: 720px) {
+  .win-container { padding-inline: 16px; }
+  .win-page-content { padding-inline: 16px; }
+}

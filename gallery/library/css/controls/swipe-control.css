@@ -1,0 +1,45 @@
+/* WinUI 3 — SwipeControl */
+.win-swipe-control {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 6px;
+  background: var(--win-critical);
+  touch-action: pan-y;
+}
+.win-swipe-control__actions {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+.win-swipe-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 72px;
+  border: 0;
+  background: var(--swipe-bg, #c42b1c);
+  color: #fff;
+  font-size: 11px;
+  cursor: default;
+}
+.win-swipe-action .win-icon { font-size: 18px; }
+.win-swipe-control__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 10px 16px;
+  background: var(--win-card-bg);
+  transform: translateX(0);
+  transition: transform 200ms var(--win-ease-decelerate);
+  touch-action: pan-y;
+  user-select: none;
+}
+.win-swipe-control.is-open .win-swipe-control__content { transform: translateX(-144px); }
+.win-swipe-control__content.is-dragging { transition: none; }

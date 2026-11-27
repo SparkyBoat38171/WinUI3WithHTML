@@ -1,0 +1,26 @@
+/* WinUI 3 — RelativePanel */
+.win-relative-panel {
+  position: relative;
+  min-height: 280px;
+  border: 1px dashed var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  overflow: hidden;
+}
+.win-relative-panel__item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--win-accent);
+  border-radius: 6px;
+  background: var(--win-accent-selected);
+  color: var(--win-text-primary);
+  font-size: 13px;
+}
+.win-relative-panel__item--a { left: 16px; top: 16px; }
+.win-relative-panel__item--b { left: 16px; top: 72px; }
+.win-relative-panel__item--c { left: 150px; top: 72px; }
+.win-relative-panel__item--d { right: 16px; bottom: 16px; }
+.win-relative-panel__item--e { left: 50%; top: 50%; transform: translate(-50%, -50%); }

@@ -1,0 +1,51 @@
+/* WinUI 3 — ProgressRing */
+.win-progress-ring {
+  --ring-size: 32px;
+  --ring-progress: 25;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  flex: none;
+}
+
+.win-progress-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.win-progress-ring circle {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.win-progress-ring__track { stroke: var(--win-control-stroke-secondary); }
+.win-progress-ring__value {
+  stroke: var(--win-accent);
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 - var(--ring-progress));
+  transition: stroke-dashoffset 250ms var(--win-ease-decelerate);
+}
+
+.win-progress-ring--indeterminate svg { animation: win-ring-rotate 2s linear infinite; }
+.win-progress-ring--indeterminate .win-progress-ring__value {
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: -35;
+  animation: win-ring-dash 1.5s ease-in-out infinite;
+}
+
+.win-progress-ring--small { --ring-size: 20px; }
+.win-progress-ring--large { --ring-size: 64px; }
+.win-progress-ring--large circle { stroke-width: 3.5; }
+.win-progress-ring__label {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--win-text-secondary);
+}
+.win-progress-ring:not(.win-progress-ring--indeterminate) svg { transform: rotate(-90deg); }

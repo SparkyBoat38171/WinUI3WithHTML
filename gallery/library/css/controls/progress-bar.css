@@ -1,0 +1,51 @@
+/* WinUI 3 — ProgressBar */
+.win-progress-bar {
+  --progress: 0%;
+  position: relative;
+  width: 100%;
+  min-width: 80px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--win-control-stroke-secondary);
+  overflow: hidden;
+}
+
+.win-progress-bar__fill {
+  width: var(--progress);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--win-accent);
+  transition: width 250ms var(--win-ease-decelerate);
+}
+
+.win-progress-bar--indeterminate .win-progress-bar__fill {
+  width: 40%;
+  animation: win-progress-indeterminate 2s var(--win-ease-standard) infinite;
+}
+
+.win-progress-bar--paused .win-progress-bar__fill { background: var(--win-text-tertiary); }
+.win-progress-bar--error .win-progress-bar__fill { background: var(--win-critical); }
+.win-progress-bar--success .win-progress-bar__fill { background: var(--win-success); }
+
+.win-progress-bar--large { height: 6px; }
+.win-progress-bar--small { height: 2px; }
+
+.win-progress-bar-dots {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  height: 20px;
+}
+.win-progress-bar-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--win-accent);
+  animation: win-dot-wave 1.4s ease-in-out infinite;
+}
+.win-progress-bar-dots span:nth-child(2) { animation-delay: 0.16s; }
+.win-progress-bar-dots span:nth-child(3) { animation-delay: 0.32s; }
+@keyframes win-dot-wave {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+  40% { transform: translateY(-4px); opacity: 1; }
+}

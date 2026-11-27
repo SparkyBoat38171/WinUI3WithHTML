@@ -1,0 +1,28 @@
+/* WinUI 3 — WrapPanel */
+.win-wrap-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  resize: horizontal;
+  overflow: auto;
+  min-width: 240px;
+  max-width: 100%;
+}
+.win-wrap-panel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: 48px;
+  padding: 8px 12px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 4px;
+  background: var(--win-card-bg);
+  font-size: 13px;
+}
+.win-wrap-panel--stretch .win-wrap-panel__item:last-child { flex: 1; }
+.win-wrap-panel--horizontal { flex-direction: column; flex-wrap: wrap; max-height: 260px; }

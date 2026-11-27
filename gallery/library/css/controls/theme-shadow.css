@@ -1,0 +1,26 @@
+/* WinUI 3 — ThemeShadow */
+.win-theme-shadow-stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 40px;
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  perspective: 800px;
+}
+.win-theme-shadow-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 8px;
+  background: var(--win-card-bg);
+  font-size: 13px;
+  text-align: center;
+  transition: transform 250ms var(--win-ease-decelerate), box-shadow 250ms;
+}
+.win-theme-shadow-card--1 { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18); }
+.win-theme-shadow-card--2 { transform: translateZ(40px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22); }
+.win-theme-shadow-card--3 { transform: translateZ(80px); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28); }
+.win-theme-shadow-card:hover { transform: translateY(-4px) translateZ(80px); box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3); }

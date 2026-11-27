@@ -1,0 +1,35 @@
+/* WinUI 3 — CalendarDatePicker */
+.win-calendar-date-picker {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 220px;
+}
+
+.win-calendar-date-picker__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--win-control-height);
+  padding: 4px 10px;
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  color: var(--win-text-primary);
+  font-size: 14px;
+  text-align: left;
+  cursor: default;
+}
+
+.win-calendar-date-picker__button:hover { background: var(--win-control-bg-hover); }
+.win-calendar-date-picker__button .win-icon { margin-left: auto; color: var(--win-text-secondary); font-size: 14px; }
+.win-calendar-date-picker__placeholder { color: var(--win-text-tertiary); }
+.win-calendar-date-picker__flyout {
+  position: absolute;
+  z-index: 903;
+  top: calc(100% + 4px);
+  left: 0;
+  animation: win-flyout-in var(--win-duration-normal) var(--win-ease-decelerate);
+}

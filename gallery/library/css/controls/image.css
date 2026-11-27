@@ -1,0 +1,34 @@
+/* WinUI 3 — Image */
+.win-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--win-corner-card);
+}
+.win-image--contain { object-fit: contain; }
+.win-image--fill { object-fit: fill; }
+.win-image--none { object-fit: none; }
+.win-image--scale-down { object-fit: scale-down; }
+.win-image--rounded { border-radius: 50%; }
+.win-image--bordered { border: 1px solid var(--win-card-stroke); }
+.win-image-frame {
+  padding: 8px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+.win-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.win-image-tile {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--win-control-bg-secondary);
+}
+.win-image-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 250ms var(--win-ease-decelerate); }
+.win-image-tile:hover img { transform: scale(1.04); }

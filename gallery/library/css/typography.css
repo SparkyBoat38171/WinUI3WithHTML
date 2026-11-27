@@ -1,0 +1,130 @@
+/* ==========================================================================
+   WinUI 3 for the Web — type ramp
+   ========================================================================== */
+
+.win-display,
+.win-title-large,
+.win-title,
+.win-subtitle,
+.win-body-large,
+.win-body-strong,
+.win-body,
+.win-caption {
+  font-family: var(--win-font-family);
+  text-wrap: pretty;
+}
+
+.win-display {
+  font-family: var(--win-font-display);
+  font-size: var(--win-font-size-display);
+  line-height: var(--win-line-display);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.win-title-large {
+  font-family: var(--win-font-display);
+  font-size: var(--win-font-size-title-large);
+  line-height: var(--win-line-title-large);
+  font-weight: 600;
+  letter-spacing: -0.25px;
+}
+
+.win-title {
+  font-family: var(--win-font-display);
+  font-size: var(--win-font-size-title);
+  line-height: var(--win-line-title);
+  font-weight: 600;
+}
+
+.win-subtitle {
+  font-family: var(--win-font-display);
+  font-size: var(--win-font-size-subtitle);
+  line-height: var(--win-line-subtitle);
+  font-weight: 600;
+}
+
+.win-body-large {
+  font-size: var(--win-font-size-body-large);
+  line-height: var(--win-line-body-large);
+  font-weight: 400;
+}
+
+.win-body-strong {
+  font-size: var(--win-font-size-body);
+  line-height: var(--win-line-body);
+  font-weight: 600;
+}
+
+.win-body {
+  font-size: var(--win-font-size-body);
+  line-height: var(--win-line-body);
+  font-weight: 400;
+}
+
+.win-caption {
+  font-size: var(--win-font-size-caption);
+  line-height: var(--win-line-caption);
+  font-weight: 400;
+}
+
+.win-caption-strong {
+  font-size: var(--win-font-size-caption);
+  line-height: var(--win-line-caption);
+  font-weight: 600;
+}
+
+.win-text-secondary { color: var(--win-text-secondary); }
+.win-text-tertiary { color: var(--win-text-tertiary); }
+.win-text-accent { color: var(--win-accent-text); }
+.win-text-success { color: var(--win-success); }
+.win-text-caution { color: var(--win-caution); }
+.win-text-critical { color: var(--win-critical); }
+
+.win-text-wrap { text-wrap: wrap; }
+.win-text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.win-code,
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--win-font-mono);
+}
+
+.win-code {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.win-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid var(--win-control-stroke-secondary);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--win-control-bg);
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-family);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.win-link {
+  color: var(--win-text-link);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.win-link:hover {
+  color: var(--win-accent-text);
+  text-decoration: none;
+}

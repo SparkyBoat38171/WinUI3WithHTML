@@ -1,0 +1,40 @@
+/* WinUI 3 — DropDownButton */
+.win-drop-down-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 32px;
+  height: var(--win-control-height);
+  padding: 4px 8px 4px 11px;
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+  cursor: default;
+  user-select: none;
+  transition: background var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-drop-down-button:hover { background: var(--win-control-bg-hover); }
+.win-drop-down-button:active { background: var(--win-control-bg-pressed); }
+.win-drop-down-button .win-icon:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  font-size: 9px;
+  line-height: 1;
+  color: var(--win-text-secondary);
+  transition: transform var(--win-duration-normal) var(--win-ease-decelerate);
+}
+.win-drop-down-button[aria-expanded="true"] .win-icon:last-child { transform: rotate(180deg); }
+.win-drop-down-button--subtle {
+  border-color: transparent;
+  background: transparent;
+}
+.win-drop-down-button--subtle:hover { background: var(--win-subtle-hover); }

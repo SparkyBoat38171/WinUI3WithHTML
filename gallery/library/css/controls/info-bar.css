@@ -1,0 +1,85 @@
+/* WinUI 3 — InfoBar */
+.win-info-bar {
+  --bar-bg: var(--win-info-bg);
+  --bar-icon: var(--win-text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 4px 12px 16px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-control);
+  background: var(--bar-bg);
+  color: var(--win-text-primary);
+  position: relative;
+  overflow: hidden;
+  animation: win-slide-down-in var(--win-duration-slow) var(--win-ease-decelerate);
+}
+
+.win-info-bar__icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--bar-icon);
+  font-family: var(--win-font-icon);
+  font-size: 16px;
+}
+
+.win-info-bar__content { flex: 1; min-width: 0; }
+.win-info-bar__title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.win-info-bar__message {
+  margin-top: 2px;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+}
+.win-info-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.win-info-bar__close {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-top: -4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 12px;
+  cursor: default;
+}
+.win-info-bar__close:hover { background: var(--win-subtle-hover); color: var(--win-text-primary); }
+
+.win-info-bar--informational { --bar-bg: var(--win-info-bg); --bar-icon: var(--win-attention); }
+.win-info-bar--success {
+  --bar-bg: var(--win-success-bg);
+  --bar-icon: var(--win-success);
+  border-color: color-mix(in srgb, var(--win-success) 24%, transparent);
+}
+.win-info-bar--warning {
+  --bar-bg: var(--win-caution-bg);
+  --bar-icon: var(--win-caution);
+  border-color: color-mix(in srgb, var(--win-caution) 24%, transparent);
+}
+.win-info-bar--error {
+  --bar-bg: var(--win-critical-bg);
+  --bar-icon: var(--win-critical);
+  border-color: color-mix(in srgb, var(--win-critical) 24%, transparent);
+}
+.win-info-bar--closable { padding-right: 4px; }

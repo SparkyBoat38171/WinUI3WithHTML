@@ -1,0 +1,77 @@
+/* WinUI 3 — TeachingTip */
+.win-teaching-tip {
+  position: fixed;
+  z-index: 1700;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-overlay);
+  background: var(--win-flyout-bg);
+  color: var(--win-text-primary);
+  box-shadow: var(--win-shadow-flyout);
+  animation: win-pop-in 250ms var(--win-ease-decelerate);
+}
+
+.win-teaching-tip__hero {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 7px 7px 0 0;
+  background: linear-gradient(135deg, #dce9f7, #c1d4ea);
+}
+[data-theme="dark"] .win-teaching-tip__hero { background: linear-gradient(135deg, #17324a, #0b1d2e); }
+.win-teaching-tip__hero img { width: 100%; height: 100%; object-fit: cover; }
+.win-teaching-tip__body { padding: 16px; }
+.win-teaching-tip__title { font-size: 16px; font-weight: 600; line-height: 22px; padding-right: 24px; }
+.win-teaching-tip__subtitle {
+  margin-top: 6px;
+  color: var(--win-text-secondary);
+  font-size: 13px;
+  line-height: 18px;
+}
+.win-teaching-tip__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--win-flyout-bg);
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 11px;
+  cursor: default;
+}
+.win-teaching-tip__close:hover { background: var(--win-subtle-hover); }
+.win-teaching-tip__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.win-teaching-tip__actions .win-spacer { flex: 1; }
+.win-teaching-tip__beak {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--win-flyout-bg);
+  border: 1px solid var(--win-card-stroke);
+  transform: rotate(45deg);
+}
+.win-teaching-tip[data-placement="bottom"] .win-teaching-tip__beak {
+  top: -8px;
+  left: var(--beak-left, 32px);
+  border-right: 0;
+  border-bottom: 0;
+}
+.win-teaching-tip[data-placement="top"] .win-teaching-tip__beak {
+  bottom: -8px;
+  left: var(--beak-left, 32px);
+  border-left: 0;
+  border-top: 0;
+}
+.win-teaching-tip__content { font-size: 14px; line-height: 20px; }

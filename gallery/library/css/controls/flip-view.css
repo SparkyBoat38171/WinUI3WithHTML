@@ -1,0 +1,68 @@
+/* WinUI 3 — FlipView */
+.win-flip-view {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+
+.win-flip-view__viewport { overflow: hidden; }
+.win-flip-view__track {
+  display: flex;
+  transition: transform 350ms var(--win-ease-point-to-point);
+}
+.win-flip-view__page {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.win-flip-view__page::after {
+  content: "";
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+  pointer-events: none;
+}
+.win-flip-view__caption { position: relative; z-index: 1; font-size: 16px; font-weight: 600; }
+.win-flip-view__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 64px;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: 6px;
+  background: var(--win-flyout-acrylic);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  color: var(--win-text-primary);
+  font-family: var(--win-font-icon);
+  font-size: 10px;
+  line-height: 1;
+  cursor: default;
+  z-index: 2;
+}
+.win-flip-view__nav .win-icon { width: 10px; height: 10px; font-size: 10px; }
+.win-flip-view__nav:hover { background: var(--win-card-bg); }
+.win-flip-view__nav--prev { left: 12px; }
+.win-flip-view__nav--next { right: 12px; }
+.win-flip-view__nav:disabled { opacity: 0.35; pointer-events: none; }
+.win-flip-view__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+}

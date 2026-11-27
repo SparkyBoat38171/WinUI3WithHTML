@@ -1,0 +1,169 @@
+/* WinUI 3 — Button */
+.win-button {
+  --button-bg: var(--win-control-bg);
+  --button-bg-hover: var(--win-control-bg-hover);
+  --button-bg-pressed: var(--win-control-bg-pressed);
+  --button-border: var(--win-control-stroke);
+  --button-fg: var(--win-text-primary);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 32px;
+  height: var(--win-control-height);
+  padding: 4px 11px;
+  border: 1px solid var(--button-border);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font-family: var(--win-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: default;
+  user-select: none;
+  transition:
+    background-color var(--win-duration-fast) var(--win-ease-standard),
+    border-color var(--win-duration-fast) var(--win-ease-standard),
+    color var(--win-duration-fast) var(--win-ease-standard),
+    transform var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-button:hover {
+  --button-bg: var(--button-bg-hover);
+  color: var(--win-text-primary);
+}
+
+.win-button:active {
+  --button-bg: var(--button-bg-pressed);
+  color: var(--win-text-secondary);
+  transform: scale(0.985);
+}
+
+.win-button:focus-visible {
+  outline: 2px solid var(--win-focus-outer);
+  outline-offset: 2px;
+}
+
+.win-button:disabled,
+.win-button[aria-disabled="true"] {
+  --button-bg: var(--win-control-bg-disabled);
+  --button-border: var(--win-control-stroke-disabled);
+  --button-fg: var(--win-text-disabled);
+  cursor: default;
+  transform: none;
+}
+
+.win-button .win-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.win-button--accent {
+  --button-bg: var(--win-accent);
+  --button-bg-hover: var(--win-accent-hover);
+  --button-bg-pressed: var(--win-accent-pressed);
+  --button-border: transparent;
+  --button-fg: var(--win-on-accent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.win-button--accent:hover {
+  --button-bg: var(--win-accent-hover);
+  color: var(--win-on-accent);
+}
+
+.win-button--accent:active {
+  --button-bg: var(--win-accent-pressed);
+  color: var(--win-text-on-accent-secondary);
+}
+
+.win-button--subtle {
+  --button-bg: transparent;
+  --button-bg-hover: var(--win-subtle-hover);
+  --button-bg-pressed: var(--win-subtle-pressed);
+  --button-border: transparent;
+}
+
+.win-button--subtle:hover,
+.win-button--transparent:hover {
+  border-color: transparent;
+}
+
+.win-button--transparent {
+  --button-bg: transparent;
+  --button-bg-hover: transparent;
+  --button-bg-pressed: transparent;
+  --button-border: transparent;
+}
+
+.win-button--transparent:hover {
+  background: transparent;
+  color: var(--win-accent-text);
+}
+
+.win-button--danger {
+  --button-bg: #c42b1c;
+  --button-bg-hover: #d13a2b;
+  --button-bg-pressed: #ad2417;
+  --button-border: transparent;
+  --button-fg: #ffffff;
+}
+
+.win-button--pill {
+  border-radius: 999px;
+  padding-inline: 16px;
+}
+
+.win-button--small {
+  height: 24px;
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  gap: 6px;
+}
+
+.win-button--large {
+  height: 40px;
+  padding: 7px 15px;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.win-button--icon-only {
+  width: var(--win-control-height);
+  min-width: var(--win-control-height);
+  padding: 0;
+}
+
+.win-button--icon-only.win-button--small {
+  width: 24px;
+  min-width: 24px;
+}
+
+.win-button--block {
+  width: 100%;
+}
+
+.win-button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.win-button--split {
+  padding: 0;
+}

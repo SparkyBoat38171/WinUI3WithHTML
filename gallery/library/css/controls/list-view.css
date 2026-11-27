@@ -1,0 +1,73 @@
+/* WinUI 3 — ListView */
+.win-list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+  user-select: none;
+}
+
+.win-list-view__group {
+  padding: 10px 12px 4px;
+  color: var(--win-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.win-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+  transition: background var(--win-duration-fast) var(--win-ease-standard);
+}
+.win-list-item:hover { background: var(--win-list-hover); }
+.win-list-item:active { background: var(--win-list-selected); }
+.win-list-item.is-selected {
+  background: var(--win-list-selected);
+  border-color: var(--win-card-stroke);
+}
+.win-list-item.is-selected::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--win-accent);
+  transform: translateY(-50%);
+}
+.win-list-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: 4px;
+  color: var(--win-accent-text);
+  background: var(--win-accent-selected);
+  font-family: var(--win-font-icon);
+  font-size: 16px;
+}
+.win-list-item__body { min-width: 0; flex: 1; }
+.win-list-item__title { font-size: 14px; line-height: 20px; }
+.win-list-item__subtitle { color: var(--win-text-secondary); font-size: 12px; line-height: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.win-list-item__meta { color: var(--win-text-tertiary); font-size: 12px; }
+.win-list-item--dragging { opacity: 0.5; }
+.win-list-item--drop-target { border-top: 2px solid var(--win-accent); }
+.win-list-view--borderless { border: 0; background: transparent; }
+.win-list-view--large .win-list-item { min-height: 56px; }

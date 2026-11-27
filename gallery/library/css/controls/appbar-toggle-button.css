@@ -1,0 +1,37 @@
+/* WinUI 3 — AppBarToggleButton */
+.win-appbar-toggle-button {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 40px;
+  height: 48px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--win-corner-control);
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 12px;
+  line-height: 16px;
+  cursor: default;
+}
+
+.win-appbar-toggle-button:hover { background: var(--win-subtle-hover); }
+.win-appbar-toggle-button[aria-pressed="true"] {
+  background: var(--win-subtle-selected);
+  color: var(--win-accent-text);
+}
+.win-appbar-toggle-button[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--win-accent);
+  transform: translateX(-50%);
+}
+.win-appbar-toggle-button .win-icon { font-size: 16px; }

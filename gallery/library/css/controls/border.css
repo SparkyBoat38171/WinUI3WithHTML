@@ -1,0 +1,20 @@
+/* WinUI 3 — Border */
+.win-border-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: 24px;
+  border: 2px solid var(--win-accent);
+  border-radius: 12px;
+  background: var(--win-accent-selected);
+  color: var(--win-text-primary);
+  text-align: center;
+}
+.win-border-control--dashed { border-style: dashed; }
+.win-border-control--thin { border-width: 1px; }
+.win-border-control__inner {
+  padding: 16px 24px;
+  border: 1px dashed var(--win-control-stroke-secondary);
+  border-radius: 8px;
+}

@@ -1,0 +1,54 @@
+/* WinUI 3 — SplitView */
+.win-split-view {
+  position: relative;
+  display: flex;
+  min-height: 260px;
+  overflow: hidden;
+  border: 1px solid var(--win-card-stroke);
+  border-radius: var(--win-corner-card);
+  background: var(--win-card-bg-secondary);
+}
+
+.win-split-view__pane {
+  width: var(--split-pane-width, 240px);
+  flex: none;
+  overflow: hidden;
+  background: var(--win-layer-bg);
+  border-right: 1px solid var(--win-divider-stroke);
+  transform: translateX(0);
+  transition:
+    transform 250ms var(--win-ease-decelerate),
+    width 250ms var(--win-ease-decelerate),
+    opacity 167ms linear;
+}
+.win-split-view__pane-inner { width: var(--split-pane-width, 240px); height: 100%; padding: 16px; }
+.win-split-view__content { flex: 1; min-width: 0; padding: 20px; overflow: auto; }
+.win-split-view--overlay .win-split-view__pane {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 3;
+  box-shadow: var(--win-shadow-flyout);
+  transform: translateX(-100%);
+}
+.win-split-view--overlay.is-pane-open .win-split-view__pane { transform: translateX(0); }
+.win-split-view--compact .win-split-view__pane { width: 48px; }
+.win-split-view--compact .win-split-view__pane-inner { width: 240px; }
+.win-split-view--closed .win-split-view__pane { width: 0; border: 0; opacity: 0; }
+.win-split-view__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--win-smoke);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 167ms linear;
+}
+.win-split-view--overlay.is-pane-open .win-split-view__scrim { opacity: 1; pointer-events: auto; }
+.win-split-view__pane-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}

@@ -1,0 +1,24 @@
+/* WinUI 3 — Canvas */
+.win-canvas-demo {
+  position: relative;
+  height: 220px;
+  border: 1px dashed var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-card);
+  background:
+    linear-gradient(to right, var(--win-divider-stroke) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(to bottom, var(--win-divider-stroke) 1px, transparent 1px) 0 0 / 20px 20px,
+    var(--win-card-bg-secondary);
+  overflow: hidden;
+}
+.win-canvas-demo__shape {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.win-canvas-demo__shape--1 { left: 24px; top: 24px; width: 120px; height: 72px; background: var(--win-accent); }
+.win-canvas-demo__shape--2 { left: 180px; top: 80px; width: 72px; height: 72px; background: #8764b8; border-radius: 50%; }
+.win-canvas-demo__shape--3 { right: 40px; top: 36px; width: 88px; height: 120px; background: #c239b3; opacity: 0.8; }

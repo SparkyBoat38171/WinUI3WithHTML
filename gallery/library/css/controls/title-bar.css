@@ -1,0 +1,101 @@
+/* WinUI 3 — TitleBar */
+.win-title-bar {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: var(--win-titlebar-height);
+  padding-left: 8px;
+  background: var(--win-titlebar-bg);
+  border-bottom: 1px solid var(--win-divider-stroke);
+  color: var(--win-text-primary);
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+.win-title-bar--inactive { background: var(--win-titlebar-inactive-bg); color: var(--win-text-secondary); }
+.win-title-bar--transparent { background: transparent; border-bottom-color: transparent; }
+
+.win-title-bar__left,
+.win-title-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+  flex: none;
+  -webkit-app-region: no-drag;
+}
+
+.win-title-bar__back,
+.win-title-bar__pane-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-family: var(--win-font-icon);
+  font-size: 14px;
+  line-height: 1;
+  cursor: default;
+}
+.win-title-bar__back .win-icon { font-size: 12px; }
+.win-title-bar__pane-toggle .win-icon { font-size: 15px; }
+.win-title-bar__back:hover,
+.win-title-bar__pane-toggle:hover { background: var(--win-subtle-hover); }
+
+.win-title-bar__icon { width: 16px; height: 16px; margin: 0 8px 0 4px; object-fit: contain; }
+.win-title-bar__title {
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  color: var(--win-text-primary);
+}
+
+.win-title-bar__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  padding: 0 16px;
+  -webkit-app-region: no-drag;
+}
+
+.win-title-bar__drag {
+  flex: 1;
+  height: 100%;
+}
+
+.win-title-bar__caption {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 4px;
+}
+
+.win-caption-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-family: var(--win-font-icon);
+  font-size: 10px;
+  line-height: 1;
+  cursor: default;
+  transition: background 83ms linear, color 83ms linear;
+}
+.win-caption-button:hover { background: var(--win-subtle-hover); }
+.win-caption-button--close:hover { background: #c42b1c; color: #fff; }
+.win-caption-button--close:active { background: #b02a1c; color: #fff; }

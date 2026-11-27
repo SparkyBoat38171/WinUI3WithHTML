@@ -1,0 +1,59 @@
+/* WinUI 3 — ToggleSplitButton */
+.win-toggle-split-button {
+  display: inline-flex;
+  height: var(--win-control-height);
+  border: 1px solid var(--win-control-stroke);
+  border-bottom-color: var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.win-toggle-split-button__primary,
+.win-toggle-split-button__secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  padding: 4px 11px;
+  border: 0;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-size: 14px;
+  cursor: default;
+}
+
+.win-toggle-split-button__secondary {
+  width: 32px;
+  padding: 0;
+  border-left: 1px solid var(--win-control-stroke);
+  font-family: var(--win-font-icon);
+  font-size: 9px;
+}
+
+.win-toggle-split-button__primary:hover,
+.win-toggle-split-button__secondary:hover { background: var(--win-subtle-hover); }
+.win-toggle-split-button__primary:active,
+.win-toggle-split-button__secondary:active { background: var(--win-subtle-pressed); }
+
+.win-toggle-split-button[aria-pressed="true"] {
+  background: var(--win-accent);
+  border-color: transparent;
+  color: var(--win-on-accent);
+}
+
+.win-toggle-split-button[aria-pressed="true"] .win-toggle-split-button__primary,
+.win-toggle-split-button[aria-pressed="true"] .win-toggle-split-button__secondary {
+  color: var(--win-on-accent);
+}
+
+.win-toggle-split-button[aria-pressed="true"] .win-toggle-split-button__secondary {
+  border-left-color: rgba(255, 255, 255, 0.16);
+}
+
+.win-toggle-split-button[aria-pressed="true"] .win-toggle-split-button__primary:hover,
+.win-toggle-split-button[aria-pressed="true"] .win-toggle-split-button__secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,159 @@
+/* WinUI 3 — TextBox */
+.win-text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.win-text-field__header {
+  color: var(--win-text-primary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.win-text-field__description {
+  color: var(--win-text-secondary);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.win-textbox-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: var(--win-control-height);
+  border: 1px solid var(--win-control-stroke);
+  border-bottom: 1px solid var(--win-control-stroke-secondary);
+  border-radius: var(--win-corner-control);
+  background: var(--win-control-bg);
+  color: var(--win-text-primary);
+  transition:
+    background var(--win-duration-fast) var(--win-ease-standard),
+    border-color var(--win-duration-fast) var(--win-ease-standard);
+}
+
+.win-textbox-wrap:hover {
+  background: var(--win-control-bg-hover);
+  border-color: var(--win-control-stroke-secondary);
+}
+
+.win-textbox-wrap:focus-within {
+  background: var(--win-control-bg-quarternary);
+  border-color: var(--win-control-stroke-secondary);
+}
+
+.win-textbox-wrap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--win-accent);
+  box-shadow: 0 1px 7px rgba(var(--win-accent-rgb), 0.55);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition:
+    width 260ms var(--win-ease-decelerate),
+    opacity 120ms linear;
+  pointer-events: none;
+}
+
+.win-textbox-wrap:focus-within::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.win-textbox {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 5px 10px 6px;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: var(--win-text-primary);
+  font-family: var(--win-font-family);
+  font-size: 14px;
+  line-height: 20px;
+  outline: 0;
+}
+
+.win-textbox::placeholder { color: var(--win-text-tertiary); }
+.win-textbox:disabled { color: var(--win-text-disabled); cursor: default; }
+
+.win-textbox-wrap:has(.win-textbox:disabled) {
+  background: var(--win-control-bg-disabled);
+  border-color: var(--win-control-stroke-disabled);
+}
+
+.win-textbox-wrap--multiline {
+  height: auto;
+  min-height: 84px;
+  align-items: stretch;
+}
+
+.win-textbox--multiline {
+  min-height: 82px;
+  padding: 8px 10px;
+  resize: vertical;
+  line-height: 20px;
+}
+
+.win-textbox-wrap--multiline:focus-within {
+  border-bottom-width: 1px;
+}
+
+.win-textbox-wrap__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex: none;
+  color: var(--win-text-secondary);
+  font-size: 14px;
+}
+
+.win-textbox-wrap__icon + .win-textbox { padding-left: 0; }
+
+.win-textbox-wrap__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin-right: 2px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--win-text-secondary);
+  font-family: var(--win-font-icon);
+  font-size: 12px;
+  cursor: default;
+}
+
+.win-textbox-wrap__action:hover { background: var(--win-subtle-hover); color: var(--win-text-primary); }
+
+.win-text-field__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--win-text-secondary);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.win-text-field--error .win-textbox-wrap { border-color: var(--win-critical); }
+.win-text-field--error .win-text-field__description { color: var(--win-critical); }
+.win-text-field--success .win-textbox-wrap { border-color: var(--win-success); }
+
+.win-textbox-wrap--inline {
+  border: 0;
+  border-bottom: 1px solid var(--win-control-stroke-secondary);
+  border-radius: 0;
+  background: transparent;
+}
